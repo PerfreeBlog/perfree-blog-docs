@@ -2,7 +2,7 @@
 title: 主题开发-语法
 ---
 ## 简介
-Perfree采用Jfinal 的 Enjouy模板引擎,在此之前使用了freemarker和thymeleaf模板引擎,最终的对比下,还是使用Enjoy模板引擎,该模板引擎具有极简设计、独创算法、极爽的开发体验,具体可查看官网介绍[Jfinal Enjoy](https://jfinal.com/doc/6-1),接下来将简单的介绍该模板引擎的语法,以便主题开发使用
+Perfree采用Jfinal 的 Enjoy模板引擎,在此之前使用了freemarker和thymeleaf模板引擎,最终的对比下,还是使用Enjoy模板引擎,该模板引擎具有极简设计、独创算法、极爽的开发体验,具体可查看官网介绍[Jfinal Enjoy](https://jfinal.com/doc/6-1),接下来将简单的介绍该模板引擎的语法,以便主题开发使用
 > 详细文档请查看[Jfinal Enjoy](https://jfinal.com/doc/6-1)
 ## 输出
 所有的取值输出方式都是以#(key)的方式

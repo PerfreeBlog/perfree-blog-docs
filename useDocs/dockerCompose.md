@@ -1,5 +1,5 @@
 ## 安装
-下载  [https://raw.githubusercontent.com/PerfreeBlog/PerfreeBlog/refs/heads/develop-4.0.0/docker-compose.yml](https://raw.githubusercontent.com/PerfreeBlog/PerfreeBlog/refs/heads/develop-4.0.0/docker-compose.yml)或新建docker-compose.yml
+下载  [https://raw.githubusercontent.com/PerfreeBlog/PerfreeBlog/refs/heads/develop-4.0.0/docker-compose.yml](https://raw.githubusercontent.com/PerfreeBlog/PerfreeBlog/refs/heads/develop-4.0.0/docker-compose.yml)或新建docker-compose.yml, 注意替换里边的版本号
 
 ```yaml
 version: '3.8'
@@ -29,7 +29,7 @@ services:
       start_period: 40s
   # perfree-blog容器配置
   perfree-blog-container:
-    image: registry.cn-hangzhou.aliyuncs.com/perfree/perfree_blog:v4.0.0-beta.1.01
+    image: registry.cn-hangzhou.aliyuncs.com/perfree/perfree_blog:版本号
     restart: always
     ports:
       # 将主机的8080端口映射到容器的8080端口

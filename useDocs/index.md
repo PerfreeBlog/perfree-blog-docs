@@ -2,10 +2,10 @@
 outline: deep
 ---
 
-> 使用下面的方式可以快速在本地体验最新版本的PerfreeBlog,但如果部署至服务器,推荐您参考对应系统的详细安装文档, 注意: 非docker compose方式部署需要提前安装mysql数据库
+> 使用下面的方式可以快速在本地体验最新版本的PerfreeBlog,但如果部署至服务器,推荐您参考对应部署方式的详细安装文档, 注意: 非docker compose方式部署需要提前安装mysql数据库
 
 ## docker compose
-下载  [https://raw.githubusercontent.com/PerfreeBlog/PerfreeBlog/refs/heads/develop-4.0.0/docker-compose.yml](https://raw.githubusercontent.com/PerfreeBlog/PerfreeBlog/refs/heads/develop-4.0.0/docker-compose.yml)或新建docker-compose.yml
+下载  [https://raw.githubusercontent.com/PerfreeBlog/PerfreeBlog/refs/heads/develop-4.0.0/docker-compose.yml](https://raw.githubusercontent.com/PerfreeBlog/PerfreeBlog/refs/heads/develop-4.0.0/docker-compose.yml)或新建docker-compose.yml, 注意替换里边的版本号
 ```yaml
 version: '3.8'
 services:
@@ -34,7 +34,7 @@ services:
       start_period: 40s
   # perfree-blog容器配置
   perfree-blog-container:
-    image: registry.cn-hangzhou.aliyuncs.com/perfree/perfree_blog:v4.0.0-beta.1.01
+    image: registry.cn-hangzhou.aliyuncs.com/perfree/perfree_blog:版本号
     restart: always
     ports:
       # 将主机的8080端口映射到容器的8080端口

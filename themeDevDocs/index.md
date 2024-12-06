@@ -2,7 +2,7 @@
 title: 主题开发-创建主题
 ---
 ## 主题开发准备
-在开发PerfreeBlog主题前,建议先在本机安装好PerfreeBlog
+在开发PerfreeBlog主题前,建议先在本机安装好PerfreeBlog, 将application.yaml配置文件中的`spring.profiles.active`的值调整为`dev`, 避免文件缓存
 ## 创建主题
 在开发主题时,先要在PerfreeBlog安装目录resources/static/themes下新建你的主题文件夹,如myTheme。目录如下所示
 ```bash
@@ -13,7 +13,7 @@ myTheme # 主题目录
 在新建一个主题时,index.html和theme.yaml为必须文件,一个主题至少由这两个文件组成。 theme.yaml内容如下:
 ```yaml
 # 主题名称
-name: Default
+name: myTheme 
 # 主题版本
 version: 4.0.2
 # 作者信息

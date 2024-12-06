@@ -3,11 +3,25 @@ import { onMounted, watch, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
 import mediumZoom from 'medium-zoom'
 import Layout from "./Layout.vue";
-
+import ElementPlus from "element-plus";
+import {ID_INJECTION_KEY } from "element-plus";
+import "element-plus/dist/index.css";
+import 'element-plus/theme-chalk/dark/css-vars.css'
 import './index.css'
 export default {
     ...DefaultTheme,
     Layout: Layout,
+    NotFound: () => "404", // <- this is a Vue 3 functional component
+    enhanceApp({ app, router, siteData }) {
+        // app is the Vue 3 app instance from createApp()
+        // router is VitePress' custom router (see `lib/app/router.js`)
+        // siteData is a ref of current site-level metadata.
+        app.use(ElementPlus);
+        app.provide(ID_INJECTION_KEY, {
+            prefix: 1024,
+            current: 0,
+        })
+    },
     setup() {
         const route = useRoute()
         const initZoom = () => {

@@ -2,6 +2,23 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    server: {
+      proxy: {
+        // 代理 /api 开头的请求到后端
+        '/api': {
+          target: 'https://www.yinpengfei.com/api', // 后端服务地址
+          changeOrigin: true, // 支持跨域
+          rewrite: (path) => path.replace(/^\/api/, ''), // 去掉 /api 前缀
+        },
+        '/attach': {
+          target: 'https://www.yinpengfei.com/attach', // 后端服务地址
+          changeOrigin: true, // 支持跨域
+          rewrite: (path) => path.replace(/^\/attach/, ''), // 去掉 /api 前缀
+        },
+      },
+    },
+  },
   title: " PerfreeBlog",
   description: "PerfreeBlog文档",
   lang: 'zh-CN',
@@ -20,19 +37,22 @@ export default defineConfig({
     nav: [
       { text: '🏠 首页', link: '/' },
       { text: '📖 使用文档', link: '/useDocs', activeMatch: '/useDocs' },
-      // { text: '🎨 主题仓库', link: '/themeDevDocs', activeMatch: '/themeDevDocs' },
-      // { text: '🎨 插件仓库', link: '/themeDevDocs', activeMatch: '/themeDevDocs' },
-      // { 
-      //   text: '🎨 开发文档',
-      //   items: [
-      //     { text: '🎨 主题开发', link: '/themeDevDocs', activeMatch: '/themeDevDocs' },
-      //     { text: '🔌 插件开发', link: '/pluginDevDocs', activeMatch: '/pluginDevDocs' }
-      //   ] 
-      // },
-      { text: '🎨 主题开发', link: '/themeDevDocs', activeMatch: '/themeDevDocs' },
-      { text: '🔌 插件开发', link: '/pluginDevDocs', activeMatch: '/pluginDevDocs' },
-      { text: '🌏 官网', link: 'https://www.perfree.org.cn'}
+      { text: '🎨 主题仓库', link: '/theme', activeMatch: '/theme/' },
+      { text: '🔌 插件仓库', link: '/plugin', activeMatch: '/plugin/' },
+      { 
+        text: '💻 开发文档',
+        items: [
+          { text: '🎨 主题开发', link: '/themeDevDocs', activeMatch: '/themeDevDocs' },
+          { text: '🔌 插件开发', link: '/pluginDevDocs', activeMatch: '/pluginDevDocs' }
+        ] 
+      },
+      // { text: '🎨 主题开发', link: '/themeDevDocs', activeMatch: '/themeDevDocs' },
+      // { text: '🔌 插件开发', link: '/pluginDevDocs', activeMatch: '/pluginDevDocs' },
+      // { text: '🌏 官网', link: 'https://www.perfree.org.cn'}
     ],
+    search: {
+      provider: 'local'
+    },
     sidebar: {
       '/useDocs': [
         {
