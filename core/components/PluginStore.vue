@@ -8,11 +8,18 @@
             </div>
        
             <div class="appstoreList container">
+                
                 <div style="position: relative;" v-loading="loading">
                     <el-row :gutter="20" style="margin-bottom: 10px;">
-                    <el-col  :xs="12" :sm="8" :md="6" :lg="6" :xl="6" v-for="app in appList">
+                    <el-col  :xs="24" :sm="12" :md="8" :lg="6" :xl="6" v-for="app in appList">
                         <div class="appCard" @click="toApp(app)">
-                            <el-image :src="app.thumbnail" :fit="'cover'" class="appImg"/>
+                            <el-image :src="app.thumbnail" :fit="'cover'" class="appImg">
+                                <template #placeholder>
+                                    <div class="imgLoading">
+                                        <el-icon class="is-loading"><Loading /></el-icon>
+                                    </div>
+                                </template>
+                            </el-image>
                             <div class="appInfo">
                                 <div class="appName">
                                     {{ app.appName }}
@@ -48,7 +55,7 @@
 <script setup>
 import {appstorePageApi} from "../api/appstore.js";
 import {reactive, ref, onMounted} from "vue";
-import { User, Search } from '@element-plus/icons-vue'
+import { User, Search, Loading } from '@element-plus/icons-vue'
 
 const searchParam = ref({
   pageNo: 1,
@@ -186,6 +193,13 @@ onMounted(() => {
     font-size: 12px;
     padding: 0 6px;
     height: 22px;
+}
+.appstore .imgLoading{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
 }
 @media screen and (max-width:1550px) {
     .appstore .container{

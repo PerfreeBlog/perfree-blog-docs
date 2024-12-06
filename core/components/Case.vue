@@ -10,7 +10,7 @@
             <div class="caseList container">
                 <div style="position: relative;">
                     <el-row :gutter="20" style="margin-bottom: 10px;">
-                    <el-col  :xs="12" :sm="8" :md="6" :lg="6" :xl="6" v-for="caseItem in caseList">
+                    <el-col  :xs="24" :sm="12" :md="8" :lg="6" :xl="6" v-for="caseItem in caseList">
                         <div class="appCard" @click="toUrl(caseItem.url)">
                             <el-image :src="caseItem.thumbnail" :fit="'cover'" class="appImg"/>
                             <div class="appInfo">
