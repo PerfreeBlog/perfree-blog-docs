@@ -9,7 +9,7 @@
        
             <div class="appstoreList container">
                 <div style="position: relative;" v-loading="loading">
-                    <el-row :gutter="20">
+                    <el-row :gutter="20" style="margin-bottom: 10px;">
                     <el-col  :xs="12" :sm="8" :md="6" :lg="6" :xl="6" v-for="app in appList">
                         <div class="appCard" @click="toApp(app)">
                             <el-image :src="app.thumbnail" :fit="'cover'" class="appImg"/>
@@ -76,7 +76,7 @@ function initPage() {
 }
 
 function toApp(app) {
-    window.open(`/theme/detail?id=${app.id}`, '_blank');
+    window.open(`/theme/detail.html?id=${app.id}`, '_blank');
 }
 
 onMounted(()=> {
@@ -153,6 +153,9 @@ onMounted(()=> {
 .appstore .appName{
     font-size: 16px;
     font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin-bottom: 3px;
 }
 .appstore .appProfile{

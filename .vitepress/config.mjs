@@ -46,6 +46,7 @@ export default defineConfig({
           { text: '🔌 插件开发', link: '/pluginDevDocs', activeMatch: '/pluginDevDocs' }
         ] 
       },
+      // { text: '🔖 案例网站', link: '/case', activeMatch: '/case/' },
       // { text: '🎨 主题开发', link: '/themeDevDocs', activeMatch: '/themeDevDocs' },
       // { text: '🔌 插件开发', link: '/pluginDevDocs', activeMatch: '/pluginDevDocs' },
       // { text: '🌏 官网', link: 'https://www.perfree.org.cn'}
