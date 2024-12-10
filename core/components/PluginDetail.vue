@@ -12,7 +12,7 @@
                     </span>
                 </div>
                 <div>
-                    <el-button type="primary" @click="toUrl(appInfo?.appDownloadUrl)" v-if="appInfo?.appDownloadUrl"><el-icon class="btnIcon"><Download /></el-icon>主题下载</el-button>
+                    <el-button type="primary" @click="toUrl(appInfo?.appDownloadUrl)" v-if="appInfo?.appDownloadUrl"><el-icon class="btnIcon"><Download /></el-icon>插件下载</el-button>
                     <el-button type="primary" @click="toUrl(appInfo?.appPreviewUrl)" v-if="appInfo?.appPreviewUrl"><el-icon class="btnIcon"><View /></el-icon>在线预览</el-button> 
                     <el-button type="primary" @click="toUrl(appInfo?.appGitUrl)" v-if="appInfo?.appGitUrl"><el-icon class="btnIcon"><Star /></el-icon>源码地址</el-button> 
                 </div>

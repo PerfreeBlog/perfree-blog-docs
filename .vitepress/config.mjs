@@ -19,7 +19,7 @@ export default defineConfig({
       },
     },
   },
-  title: " PerfreeBlog",
+  title: " PerfreeBlog - 一款Java开发的博客/CMS系统 - 我的学习笔记2",
   description: "PerfreeBlog文档",
   lang: 'zh-CN',
   head: [
@@ -32,6 +32,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
+    siteTitle: 'PerfreeBlog',
     logo: { src: '/logo.png', width: 24, height: 24 },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -46,7 +47,7 @@ export default defineConfig({
           { text: '🔌 插件开发', link: '/pluginDevDocs', activeMatch: '/pluginDevDocs' }
         ] 
       },
-      // { text: '🔖 案例网站', link: '/case', activeMatch: '/case/' },
+      { text: '🔖 案例网站', link: '/case', activeMatch: '/case/' },
       // { text: '🎨 主题开发', link: '/themeDevDocs', activeMatch: '/themeDevDocs' },
       // { text: '🔌 插件开发', link: '/pluginDevDocs', activeMatch: '/pluginDevDocs' },
       // { text: '🌏 官网', link: 'https://www.perfree.org.cn'}

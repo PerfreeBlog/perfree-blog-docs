@@ -12,7 +12,13 @@
                     <el-row :gutter="20" style="margin-bottom: 10px;">
                     <el-col  :xs="24" :sm="12" :md="8" :lg="6" :xl="6" v-for="caseItem in caseList">
                         <div class="appCard" @click="toUrl(caseItem.url)">
-                            <el-image :src="caseItem.thumbnail" :fit="'cover'" class="appImg"/>
+                            <el-image :src="caseItem.thumbnail" :fit="'cover'" class="appImg">
+                                <template #placeholder>
+                                    <div class="imgLoading">
+                                        <el-icon class="is-loading"><Loading /></el-icon>
+                                    </div>
+                                </template>
+                            </el-image>
                             <div class="appInfo">
                                 <div class="appName">
                                     {{ caseItem.name }}
@@ -35,10 +41,15 @@
 <script setup>
 import Comment from '../../.vitepress/theme/components/Comment.vue';
 import {reactive, ref, onMounted} from "vue";
-import { User, Search } from '@element-plus/icons-vue'
+import { User, Search,Loading } from '@element-plus/icons-vue'
 
 let caseList = ref([
-    {name: "Perfree的个人博客", url: "https://www.yinpengfei.com/", thumbnail: "/case/imgs/1733468250966.jpg"}
+    {name: "Perfree的个人博客", url: "https://www.yinpengfei.com/", thumbnail: "/case/1733468250966.jpg"},
+    {name: "杯子的博客", url: "https://blog.pereast.com/", thumbnail: "/case/1733796105656.jpg"},
+    {name: "兽医首选", url: "https://www.petcare.cn/", thumbnail: "/case/1733796340015.jpg"},
+    {name: "交科能源", url: "https://www.enytek.cn/", thumbnail: "/case/1733796480520.jpg"},
+    {name: "Sunry的窝", url: "https://www.sunry.top/", thumbnail: "/case/1733797056676.jpg"},
+    {name: "Matuto的博客", url: "https://www.majingzhen.com/", thumbnail: "/case/1733797481309.jpg"}
 ]);
 
 function toUrl(url) {
@@ -146,6 +157,13 @@ function toUrl(url) {
     font-size: 12px;
     padding: 0 6px;
     height: 22px;
+}
+.case .imgLoading{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
 }
 @media screen and (max-width:1550px) {
     .case .container{
