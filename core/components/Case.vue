@@ -6,7 +6,7 @@
                 <p>收录了目前使用PerfreeBlog部署的部分网站</p>
                 <p>您也可以在下方评论区提交您的网站</p>
             </div>
-       
+
             <div class="caseList container">
                 <div style="position: relative;">
                     <el-row :gutter="20" style="margin-bottom: 10px;">
@@ -30,12 +30,12 @@
 
                 <Comment :key="'/case'"></Comment>
                 </div>
-               
+
             </div>
-     
+
         </div>
     </div>
-    
+
 </template>
 
 <script setup>
@@ -49,7 +49,8 @@ let caseList = ref([
     {name: "兽医首选", url: "https://www.petcare.cn/", thumbnail: "/case/1733796340015.jpg"},
     {name: "交科能源", url: "https://www.enytek.cn/", thumbnail: "/case/1733796480520.jpg"},
     {name: "Sunry的窝", url: "https://www.sunry.top/", thumbnail: "/case/1733797056676.jpg"},
-    {name: "Matuto的博客", url: "https://www.majingzhen.com/", thumbnail: "/case/1733797481309.jpg"}
+    {name: "Matuto的博客", url: "https://www.majingzhen.com/", thumbnail: "/case/1733797481309.jpg"},
+    {name: "可昕之家", url: "https://zhangqinglei.cn/", thumbnail: "/case/1744336014822.jpg"}
 ]);
 
 function toUrl(url) {
